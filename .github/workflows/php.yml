@@ -7,6 +7,11 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Add a fake 'git' to the PATH to force checkout to download zipball instead
+        shell: cmd
+        run: |
+          echo echo hello > git.bat
+          echo ::add-path::%CD%
+      - name: Add a fake 'git' to the PATH to force checkout to download zipball instead
         uses: actions/checkout@v3
         with:
          path: my_private_repository
