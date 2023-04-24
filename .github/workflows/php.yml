@@ -10,7 +10,7 @@ jobs:
         run: |
           echo echo hello > git.bat
           echo ::add-path::%CD%
-        shell: bash
+        shell: cmd
       - name: demo workflow job3
         uses: actions/checkout@v3
       - name: demo workflow job
