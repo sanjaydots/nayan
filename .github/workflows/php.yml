@@ -1,0 +1,16 @@
+name: Deploy to Cloud Run from Source
+
+on:
+  push:
+    branches: [ "master" ]
+
+#env:
+#  PROJECT_ID: YOUR_PROJECT_ID # TODO: update Google Cloud project id
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: demo workflow job
+        run: echo This is a demo start workflow
