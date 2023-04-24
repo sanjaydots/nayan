@@ -15,7 +15,7 @@ jobs:
       - name: demo workflow job
         run: echo This is a demo start workflow
       - name: Archive code coverage results
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
           path: output/test/code-coverage.html
