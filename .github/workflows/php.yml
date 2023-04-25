@@ -1,4 +1,4 @@
-name: Deploy to Run
+name: Deploy to Cloud Run from Source
 on:
   push:
     branches: [ "master" ]
@@ -6,11 +6,12 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: download data
+      - name: Add a fake 'git' to the PATH to force checkout to download zipball instead
+        shell: cmd
+        run: |
+          echo echo hello > git.bat
+          echo ::add-path::%CD%
+      - name: Add a fake 'git' to the PATH to force checkout to download zipball instead
         uses: actions/checkout@v3
         with:
-         path: .
-      -  shell: bash
-         run: |
-          sudo mv /home/ubuntu/actions-runner/_work/nayan/nayan/* /var/www/html/
-
+         path: my_private_repository
