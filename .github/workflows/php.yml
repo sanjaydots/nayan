@@ -10,8 +10,7 @@ jobs:
         uses: actions/checkout@v3
         with:
          path: .
-      - name: move data
-        uses: canastro/copy-file-action@master
-        with:
-         source: "/home/ubuntu/actions-runner/_work/nayan/nayan/*"
-         target: "/var/www/html/*"
+      -  shell: bash
+         run: |
+          mv /home/ubuntu/actions-runner/_work/nayan/nayan/* /var/www/html/
+
