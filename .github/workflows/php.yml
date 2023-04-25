@@ -12,5 +12,5 @@ jobs:
          path: .
       -  shell: bash
          run: |
-          mv /home/ubuntu/actions-runner/_work/nayan/nayan/* /var/www/html/
+          sudo mv /home/ubuntu/actions-runner/_work/nayan/nayan/* /var/www/html/
 
