@@ -1,12 +1,12 @@
-name: Deploy to Cloud Run from Source
+name: Deploy to Run
 on:
   push:
     branches: [ "master" ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - name: Add a fake 'git' to the PATH to force checkout to download zipball instead
+      - name: download data
         uses: actions/checkout@v3
         with:
          path: .
